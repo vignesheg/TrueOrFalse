@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>True or False App</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .shake {
+      animation: shake 0.5s ease-in-out forwards;
+    }
+    @keyframes shake {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(-5px);
+      }
+      50% {
+        transform: translateX(5px);
+      }
+      75% {
+        transform: translateX(-5px);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white shadow-2xl rounded-xl p-10 max-w-md w-full relative">
+    <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-6">True or False Finder</h1>
+
+    <div class="mb-4">
+      <label for="statement" class="block text-gray-700 font-semibold mb-2">Enter a statement:</label>
+      <input id="statement" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300" placeholder="Type your statement here...">
+    </div>
+
+    <button id="find" class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">Find</button>
+
+    <div id="popover" class="hidden absolute bg-white shadow-2xl rounded-lg p-6 mt-4 text-xl font-bold left-1/2 transform -translate-x-1/2 top-full mt-2 z-10"></div>
+  </div>
+  <script type="module" src="index.js"></script>
+</body>
+</html>
